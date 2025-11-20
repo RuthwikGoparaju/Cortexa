@@ -14,7 +14,6 @@ export default function App() {
   const [adminOpen, setAdminOpen] = useState(false);
   const [formContext, setFormContext] = useState({ subject: 'Pilot Access', title: 'Request Pilot Access' });
 
-  // Function to smooth scroll to sections
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -34,7 +33,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-veda-bg text-veda-text antialiased selection:bg-veda-accent selection:text-veda-bg">
+    <div className="min-h-screen flex flex-col bg-white text-gray-900 antialiased selection:bg-black selection:text-white">
       <Navbar onScrollTo={scrollToSection} onContactClick={() => updateFormContext('Pilot Access', 'Request Pilot Access')} />
       
       <main className="flex-grow">

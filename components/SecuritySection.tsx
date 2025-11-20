@@ -33,25 +33,25 @@ export default function SecuritySection() {
   };
 
   return (
-    <section id="security" className="py-24 bg-veda-bg border-y border-veda-surface">
+    <section id="security" className="py-24 bg-white border-y border-gray-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center gap-3 mb-12">
-          <LockIcon className="w-8 h-8 text-veda-accent" />
-          <h2 className="text-3xl font-serif font-bold text-white">Enterprise-Grade Security</h2>
+          <LockIcon className="w-8 h-8 text-black" />
+          <h2 className="text-3xl font-serif font-bold text-gray-900">Enterprise-Grade Security</h2>
         </div>
 
         <div className="space-y-4">
           {items.map((item) => (
-            <div key={item.id} className="bg-veda-surface rounded-lg overflow-hidden border border-white/5">
+            <div key={item.id} className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200 transition-all hover:border-gray-300">
               <button
                 onClick={() => toggle(item.id)}
-                className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white/5 transition-colors focus:outline-none"
+                className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-100 transition-colors focus:outline-none"
               >
-                <span className={`font-semibold text-lg ${openId === item.id ? 'text-veda-accent' : 'text-white'}`}>
+                <span className={`font-semibold text-lg ${openId === item.id ? 'text-black' : 'text-gray-700'}`}>
                   {item.title}
                 </span>
                 <ChevronDownIcon 
-                  className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${openId === item.id ? 'rotate-180' : ''}`} 
+                  className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${openId === item.id ? 'rotate-180 text-black' : ''}`} 
                 />
               </button>
               <div 
@@ -59,7 +59,7 @@ export default function SecuritySection() {
                   openId === item.id ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <p className="px-6 pb-6 text-gray-400 leading-relaxed">
+                <p className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-200 pt-4">
                   {item.content}
                 </p>
               </div>

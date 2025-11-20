@@ -55,23 +55,23 @@ export default function LiveDemo() {
   };
 
   return (
-    <section id="demo" className="py-24 bg-veda-surface/30 border-t border-white/5">
+    <section id="demo" className="py-24 bg-white border-t border-gray-100">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-serif font-bold text-white mb-4">See Cortexa in Action</h2>
-          <p className="text-veda-muted">Paste a snippet or use our sample. Watch the engine diagnose and repair in real-time.</p>
+          <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">See Cortexa in Action</h2>
+          <p className="text-gray-500">Paste a snippet or use our sample. Watch the engine diagnose and repair in real-time.</p>
         </div>
 
-        <div className="bg-veda-bg border border-white/10 rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/5 flex flex-col md:flex-row h-[500px]">
+        <div className="bg-[#0B1624] border border-gray-800 rounded-xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-[500px]">
           {/* Editor Pane */}
-          <div className="flex-1 flex flex-col border-r border-white/10">
+          <div className="flex-1 flex flex-col border-r border-gray-800">
             {/* Tabs */}
-            <div className="flex bg-[#020812] border-b border-white/10 overflow-x-auto">
+            <div className="flex bg-[#020812] border-b border-gray-800 overflow-x-auto">
               {Object.keys(files).map(filename => (
                 <button
                   key={filename}
                   onClick={() => setActiveFile(filename)}
-                  className={`px-4 py-3 text-xs font-mono border-r border-white/5 whitespace-nowrap ${activeFile === filename ? 'bg-[#0B1624] text-veda-accent' : 'text-gray-500 hover:text-gray-300'}`}
+                  className={`px-4 py-3 text-xs font-mono border-r border-gray-800 whitespace-nowrap ${activeFile === filename ? 'bg-[#0B1624] text-white' : 'text-gray-500 hover:text-gray-300'}`}
                 >
                   {filename}
                 </button>
@@ -87,11 +87,11 @@ export default function LiveDemo() {
                />
             </div>
             {/* Action Bar */}
-            <div className="p-4 bg-[#020812] border-t border-white/10">
+            <div className="p-4 bg-[#020812] border-t border-gray-800">
               <button 
                 onClick={runSimulation}
                 disabled={isRunning}
-                className="w-full py-3 bg-veda-surface border border-veda-accent text-veda-accent font-bold rounded-lg hover:bg-veda-accent hover:text-veda-bg transition-all duration-300 shadow-lg flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-3 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isRunning ? (
                     <>
@@ -120,7 +120,7 @@ export default function LiveDemo() {
               )}
               
               {isRunning && steps.length === 0 && (
-                <div className="text-veda-accent font-mono text-xs animate-pulse">
+                <div className="text-blue-400 font-mono text-xs animate-pulse">
                     &gt; Establishing Secure Handshake...<br/>
                     &gt; Parsing AST for {activeFile}...
                 </div>
